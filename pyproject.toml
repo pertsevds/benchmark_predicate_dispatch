@@ -54,7 +54,7 @@ test = [
 ]
 
 [tool.pdm.scripts]
-test = "pytest --cov=benchmark_predicate_dispatch"
+test = "pytest tests"
 format = "black src tests"
 lint = "pylint src"
 mypy = "mypy src"
