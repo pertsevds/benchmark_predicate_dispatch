@@ -1,0 +1,94 @@
+[project]
+name = "benchmark_predicate_dispatch"
+version = "0.1.0"
+description = "Benchmark Predicate_dispatch and other dispatchers"
+authors = [{ name = "Dmitriy Pertsev", email = "davaeron@gmail.com" }]
+dependencies = [
+    "predicate-dispatch>=0.2.0",
+    "multipledispatch>=0.6.0",
+]
+requires-python = ">=3.7"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+keywords = ["dispatch", "functional programming"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[project.urls]
+Homepage = "https://github.com/pertsevds/benchmark_predicate_dispatch"
+Repository = "https://github.com/pertsevds/benchmark_predicate_dispatch"
+Documentation = "https://github.com/pertsevds/benchmark_predicate_dispatch"
+"Bug Tracker" = "https://github.com/pertsevds/benchmark_predicate_dispatch/issues"
+
+[project.optional-dependencies]
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+[tool.pdm.build]
+package-dir = "src"
+includes = ["src"]
+source-includes = ["tests", "LICENSE", "README.md"]
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "mypy>=0.982",
+    "black>=22.10.0",
+    "pylint>=2.13.9",
+]
+test = [
+    "pytest",
+    "pytest-benchmark>=4.0.0",
+]
+
+[tool.pdm.scripts]
+test = "pytest --cov=benchmark_predicate_dispatch"
+format = "black src tests"
+lint = "pylint src"
+mypy = "mypy src"
+
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | tests/fixtures
+)/
+'''
+
+[tool.mypy]
+show_error_codes = true
+strict = true
+
+[tool.isort]
+profile = "black"
+atomic = true
+skip_glob = ["*/setup.py"]
+filter_files = true
+known_first_party = ["pdm"]
+known_third_party = ["pytest"]
+
+[tool.pytest.ini_options]
+addopts = "-r aR"
+testpaths = ["tests/"]
