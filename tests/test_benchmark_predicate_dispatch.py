@@ -15,7 +15,7 @@
 # type: ignore
 # pylint: skip-file
 
-from predicate_dispatch import predicate_cache_result
+from predicate_dispatch import predicate_cache
 from multipledispatch import dispatch
 
 import pytest
@@ -79,15 +79,15 @@ def test_benchmark_call_single_dispatch(benchmark, val):
 
 # predicate_dispatch
 
-@predicate_cache_result(lambda x: x is int)
+@predicate_cache(lambda x: x is int)
 def isint2(x):
     return True
 
-@predicate_cache_result(lambda x: x is object)
+@predicate_cache(lambda x: x is object)
 def isint2(x):
     return False
 
-@predicate_cache_result()
+@predicate_cache()
 def isint2(x):
     return False
 
@@ -106,23 +106,23 @@ def test_benchmark_call_single_dispatch2(benchmark, val):
 
 #     @benchmark
 #     def inner():
-#         @predicate_cache_result(lambda x, y: (x is int) and (y is int))
+#         @predicate_cache(lambda x, y: (x is int) and (y is int))
 #         def mul(x, y):
 #             return x * y
 
-#         @predicate_cache_result(lambda x, y: (x is str) and (y is int))
+#         @predicate_cache(lambda x, y: (x is str) and (y is int))
 #         def mul(x, y):
 #             return x * y
 
-#         @predicate_cache_result()
+#         @predicate_cache()
 #         def mul(x, y):
 #             return x * y
 
-#         # @predicate_cache_result(lambda x, y, z: (x is int) and (y is int) and (z is list))
+#         # @predicate_cache(lambda x, y, z: (x is int) and (y is int) and (z is list))
 #         # def mul(x, y, *args):
 #         #     return x * y
 
-#         # @predicate_cache_result(lambda x: x is list)
+#         # @predicate_cache(lambda x: x is list)
 #         # def mul(*args):
 #         #     return sum(args)
 
