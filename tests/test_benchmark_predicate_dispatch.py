@@ -74,9 +74,6 @@ def test_predicate_cache_result(benchmark, val):
     benchmark(isint4, val)
 
 
-if __name__ == "__main__":
-    pytest.main()
-
 # plum
 
 
@@ -93,3 +90,6 @@ def isint5(x: object):
 @pytest.mark.parametrize("val", [1, "a"])
 def test_plum_dispatch(benchmark, val):
     benchmark(isint5, val)
+
+if __name__ == "__main__":
+    pytest.main()
