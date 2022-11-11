@@ -22,7 +22,7 @@ def isint(x):
 
 
 @pytest.mark.parametrize("val", [1, "a"])
-def test_benchmark_multipledispatch_call_single_dispatch(benchmark, val):
+def test_multipledispatch(benchmark, val):
     benchmark(isint, val)
 
 
@@ -40,7 +40,7 @@ def isint2(x):
 
 
 @pytest.mark.parametrize("val", [1, "a"])
-def test_benchmark_predicate_dispatch_call_single_dispatch(benchmark, val):
+def test_predicate_dispatch(benchmark, val):
     benchmark(isint2, val)
 
 
@@ -55,7 +55,7 @@ def isint3(x):
 
 
 @pytest.mark.parametrize("val", [1, "a"])
-def test_benchmark_predicate_cache_call_single_dispatch(benchmark, val):
+def test_predicate_cache(benchmark, val):
     benchmark(isint3, val)
 
 
@@ -70,7 +70,7 @@ def isint4(x):
 
 
 @pytest.mark.parametrize("val", [1, "a"])
-def test_benchmark_predicate_cache_result_call_single_dispatch(benchmark, val):
+def test_predicate_cache_result(benchmark, val):
     benchmark(isint4, val)
 
 
@@ -91,5 +91,5 @@ def isint5(x: object):
 
 
 @pytest.mark.parametrize("val", [1, "a"])
-def test_benchmark_plum_dispatch_call_single_dispatch(benchmark, val):
+def test_plum_dispatch(benchmark, val):
     benchmark(isint5, val)
