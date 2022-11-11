@@ -1,7 +1,14 @@
-# Benchmark predicate_dispatch and other dispatchers
+# Benchmark Python dispatchers
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pdm-managed](https://img.shields.io/badge/pdm-managed-blueviolet)](https://pdm.fming.dev)
+
+## Benchmarked projects
+
+- [predicate_dispatch](https://github.com/pertsevds/predicate_dispatch)
+- [plum](https://github.com/wesselb/plum)
+- [multipledispatch](https://github.com/mrocklin/multipledispatch)
+
 
 ## License
 
@@ -20,9 +27,3 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-
-## Used projects
-
-- [predicate_dispatch](https://github.com/pertsevds/predicate_dispatch)
-- [plum](https://github.com/wesselb/plum)
-- [multipledispatch](https://github.com/mrocklin/multipledispatch)
