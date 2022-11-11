@@ -62,7 +62,7 @@ def isint2(x):
     return False
 
 @pytest.mark.parametrize("val", [1, 'a'])
-def test_benchmark_call_single_dispatch2(benchmark, val):
+def test_benchmark_predicate_dispatch_call_single_dispatch2(benchmark, val):
     benchmark(isint2, val)
 
 
