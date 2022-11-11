@@ -53,7 +53,7 @@ dev = [
 ]
 test = [
     "pytest",
-    "pytest-benchmark>=4.0.0",
+    "pytest-benchmark[histogram]>=4.0.0",
 ]
 
 [tool.pdm.scripts]

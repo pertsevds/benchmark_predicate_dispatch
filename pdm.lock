@@ -150,7 +150,7 @@ summary = "Multiple dispatch in Python"
 
 [[package]]
 name = "predicate-dispatch"
-version = "0.2.0"
+version = "0.2.1"
 requires_python = ">=3.7"
 summary = "Predicative dispatch decorator for Python, based on idea from book \"Functional Programming in Python\"."
 
@@ -158,6 +158,16 @@ summary = "Predicative dispatch decorator for Python, based on idea from book \"
 name = "py-cpuinfo"
 version = "9.0.0"
 summary = "Get CPU info with pure Python"
+
+[[package]]
+name = "pygal"
+version = "3.0.0"
+summary = "A Python svg graph plotting library"
+
+[[package]]
+name = "pygaljs"
+version = "1.0.2"
+summary = "Python package providing assets from https://github.com/Kozea/pygal.js"
 
 [[package]]
 name = "pygments"
@@ -217,6 +227,18 @@ summary = "A ``pytest`` fixture for benchmarking code. It will group the tests i
 dependencies = [
     "py-cpuinfo",
     "pytest>=3.8",
+]
+
+[[package]]
+name = "pytest-benchmark"
+version = "4.0.0"
+extras = ["histogram"]
+requires_python = ">=3.7"
+summary = "A ``pytest`` fixture for benchmarking code. It will group the tests into rounds that are calibrated to the chosen timer."
+dependencies = [
+    "pygal",
+    "pygaljs",
+    "pytest-benchmark==4.0.0",
 ]
 
 [[package]]
@@ -287,7 +309,7 @@ summary = "Module for decorators, wrappers and monkey patching."
 
 [metadata]
 lock_version = "4.0"
-content_hash = "sha256:aaadb83a35c4d3549becf7b919eea6fb2eedd4a4f7f8f2833316c4eb4b86aa7c"
+content_hash = "sha256:727ee02e43604c5af88e6d7e0af0ea58424bc7453598c3f35dd2b4bba8e5ac01"
 
 [metadata.files]
 "astroid 2.12.12" = [
@@ -439,13 +461,21 @@ content_hash = "sha256:aaadb83a35c4d3549becf7b919eea6fb2eedd4a4f7f8f2833316c4eb4
     {url = "https://files.pythonhosted.org/packages/39/4e/f4d6b2bd80a9880989d37773f0f2e3a91a2d5352732e4ebb68b5606bca83/plum-dispatch-1.7.4.tar.gz", hash = "sha256:1c1d15b2842b5fa98405fd3dff6fad4887bdc77b60bd200e209d76ebfe9990fe"},
     {url = "https://files.pythonhosted.org/packages/e6/b6/3aaa985591c63da64c7bd8c5f470442a4c00b37ad3ed057f21de14174f83/plum_dispatch-1.7.4-py3-none-any.whl", hash = "sha256:c40dbeab269bbbf972ce0dbc078380da19ebaee1a370a2c564e1814a11bde216"},
 ]
-"predicate-dispatch 0.2.0" = [
-    {url = "https://files.pythonhosted.org/packages/67/4b/1ed3daab410d2a94f6505633f15e62e5dc2bae6b77cc2ed01d8efd8c96d3/predicate-dispatch-0.2.0.tar.gz", hash = "sha256:2db49067a330c02cdb223cea5c567302cbbab3b1e3cd8f1e4c363051b0ee516c"},
-    {url = "https://files.pythonhosted.org/packages/76/e8/70ab31c204e55824dc20878842af736ce25de3d4ce0b1c09e765e9fce7cd/predicate_dispatch-0.2.0-py3-none-any.whl", hash = "sha256:0de1c64b78153345b5706d650d14ea05c73f18ccf549ba5d7536719c599aaaea"},
+"predicate-dispatch 0.2.1" = [
+    {url = "https://files.pythonhosted.org/packages/5c/1e/a9dd3be09cd2cc818b40a4c74163c0b78af545d456602ebd1663cccf2b70/predicate-dispatch-0.2.1.tar.gz", hash = "sha256:6bb7d829295b03c8097a934b978c820e76e25f78785d90722ee442327c32b18f"},
+    {url = "https://files.pythonhosted.org/packages/ec/76/322780e5a77a8777c3c196e7067cf0c6c3598453392654b33fdf07048162/predicate_dispatch-0.2.1-py3-none-any.whl", hash = "sha256:85da3e36b566517c5862869c07cd7a651f6128e7444cb69c3898cc5e83de8760"},
 ]
 "py-cpuinfo 9.0.0" = [
     {url = "https://files.pythonhosted.org/packages/37/a8/d832f7293ebb21690860d2e01d8115e5ff6f2ae8bbdc953f0eb0fa4bd2c7/py-cpuinfo-9.0.0.tar.gz", hash = "sha256:3cdbbf3fac90dc6f118bfd64384f309edeadd902d7c8fb17f02ffa1fc3f49690"},
     {url = "https://files.pythonhosted.org/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl", hash = "sha256:859625bc251f64e21f077d099d4162689c762b5d6a4c3c97553d56241c9674d5"},
+]
+"pygal 3.0.0" = [
+    {url = "https://files.pythonhosted.org/packages/a8/db/021ea4fc623cbef831333bfb896374d2931be26c899d18c075579e955886/pygal-3.0.0.tar.gz", hash = "sha256:2923f95d2e515930aa5a997219dccefbf3d92b7eaf5fc1c9febb95b09935fdb2"},
+    {url = "https://files.pythonhosted.org/packages/e2/34/aa8cafcdf57058c080f64e5205eaed2ed523aec0d6519a92aec250189079/pygal-3.0.0-py2.py3-none-any.whl", hash = "sha256:9ae06e32dec1422f9cd0d606fe2728f78e0b5d644551137480d8d5806e2426f0"},
+]
+"pygaljs 1.0.2" = [
+    {url = "https://files.pythonhosted.org/packages/49/6f/07dab31ca496feda35cf3455b9e9380c43b5c685bb54ad890831c790da38/pygaljs-1.0.2-py2.py3-none-any.whl", hash = "sha256:d75e18cb21cc2cda40c45c3ee690771e5e3d4652bf57206f20137cf475c0dbe8"},
+    {url = "https://files.pythonhosted.org/packages/75/19/3a53f34232a9e6ddad665e71c83693c5db9a31f71785105905c5bc9fbbba/pygaljs-1.0.2.tar.gz", hash = "sha256:0b71ee32495dcba5fbb4a0476ddbba07658ad65f5675e4ad409baf154dec5111"},
 ]
 "pygments 2.13.0" = [
     {url = "https://files.pythonhosted.org/packages/4f/82/672cd382e5b39ab1cd422a672382f08a1fb3d08d9e0c0f3707f33a52063b/Pygments-2.13.0-py3-none-any.whl", hash = "sha256:f643f331ab57ba3c9d89212ee4a2dabc6e94f117cf4eefde99a0574720d14c42"},
