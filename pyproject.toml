@@ -7,7 +7,7 @@ dependencies = [
     "predicate-dispatch>=0.2.0",
     "multipledispatch>=0.6.0",
 ]
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 readme = "README.md"
 license = { text = "Apache-2.0" }
 keywords = ["dispatch", "functional programming"]
@@ -47,6 +47,8 @@ dev = [
     "mypy>=0.982",
     "black>=22.10.0",
     "pylint>=2.13.9",
+    "scalene>=1.5.4",
+    "snakeviz>=2.1.1",
 ]
 test = [
     "pytest",

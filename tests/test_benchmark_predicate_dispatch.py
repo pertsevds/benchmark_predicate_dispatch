@@ -1,7 +1,7 @@
 # type: ignore
 # pylint: skip-file
 
-from predicate_dispatch import predicate
+from predicate_dispatch import predicate, predicate_cache, predicate_cache_result
 from multipledispatch import dispatch
 
 import pytest
@@ -58,7 +58,7 @@ def isint2(x):
     return False
 
 @pytest.mark.parametrize("val", [1, 'a'])
-def test_benchmark_predicate_dispatch_call_single_dispatch2(benchmark, val):
+def test_benchmark_predicate_dispatch_call_single_dispatch(benchmark, val):
     benchmark(isint2, val)
 
 
@@ -98,3 +98,32 @@ def test_benchmark_predicate_dispatch_call_single_dispatch2(benchmark, val):
 #         # mul(1, 2, 3, 4, 5)
 
 # # /predicate_dispatch
+
+
+@predicate_cache(lambda x: isinstance(x, int))
+def isint3(x):
+    return True
+
+@predicate_cache()
+def isint3(x):
+    return False
+
+@pytest.mark.parametrize("val", [1, 'a'])
+def test_benchmark_predicate_cache_call_single_dispatch(benchmark, val):
+    benchmark(isint3, val)
+
+
+@predicate_cache_result(lambda x: isinstance(x, int))
+def isint4(x):
+    return True
+
+@predicate_cache_result()
+def isint4(x):
+    return False
+
+@pytest.mark.parametrize("val", [1, 'a'])
+def test_benchmark_predicate_cache_result_call_single_dispatch(benchmark, val):
+    benchmark(isint4, val)
+
+if __name__ == '__main__':
+    pytest.main()
