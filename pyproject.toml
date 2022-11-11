@@ -1,5 +1,5 @@
 [project]
-name = "benchmark_predicate_dispatch"
+name = "benchmark_python_dispatchers"
 version = "0.1.0"
 description = "Benchmark Predicate_dispatch and other dispatchers"
 authors = [{ name = "Dmitriy Pertsev", email = "davaeron@gmail.com" }]
