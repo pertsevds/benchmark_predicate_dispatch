@@ -54,6 +54,7 @@ dev = [
 test = [
     "pytest",
     "pytest-benchmark[histogram]>=4.0.0",
+    "setuptools>=65.5.1",
 ]
 
 [tool.pdm.scripts]
