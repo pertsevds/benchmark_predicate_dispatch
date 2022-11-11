@@ -49,13 +49,9 @@ def test_benchmark_add_and_use_instance(benchmark):
 
 # predicate_dispatch
 
-@predicate(lambda x: x is int)
+@predicate(lambda x: isinstance(x, int))
 def isint2(x):
     return True
-
-@predicate(lambda x: x is object)
-def isint2(x):
-    return False
 
 @predicate()
 def isint2(x):
