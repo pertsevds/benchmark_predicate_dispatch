@@ -6,6 +6,7 @@ authors = [{ name = "Dmitriy Pertsev", email = "davaeron@gmail.com" }]
 dependencies = [
     "predicate-dispatch>=0.2.0",
     "multipledispatch>=0.6.0",
+    "plum-dispatch>=1.7.4",
 ]
 requires-python = ">=3.8"
 readme = "README.md"
