@@ -38,10 +38,12 @@ def isint2(x):
 def isint2(x):
     return False
 
-
 @pytest.mark.parametrize("val", [1, "a"])
 def test_predicate_dispatch(benchmark, val):
     benchmark(isint2, val)
+
+
+# predicate_cache
 
 
 @predicate_cache(lambda x: isinstance(x, int))
@@ -57,6 +59,9 @@ def isint3(x):
 @pytest.mark.parametrize("val", [1, "a"])
 def test_predicate_cache(benchmark, val):
     benchmark(isint3, val)
+
+
+# predicate_cache_result
 
 
 @predicate_cache_result(lambda x: isinstance(x, int))

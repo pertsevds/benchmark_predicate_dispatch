@@ -4,9 +4,9 @@ version = "0.1.0"
 description = "Benchmark Predicate_dispatch and other dispatchers"
 authors = [{ name = "Dmitriy Pertsev", email = "davaeron@gmail.com" }]
 dependencies = [
-    "predicate-dispatch>=0.2.0",
     "multipledispatch>=0.6.0",
     "plum-dispatch>=1.7.4",
+    "predicate-dispatch>=0.4.0",
 ]
 requires-python = ">=3.8"
 readme = "README.md"
